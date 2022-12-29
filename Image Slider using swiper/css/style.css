@@ -1,0 +1,141 @@
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Great Vibes", sans-serif;
+}
+.main {
+  height: 100vh;
+  width: 100%;
+}
+.wrapper,
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slide {
+  overflow: hidden;
+}
+.slide::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+.slide .image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.slide .image-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+.image-data span.text {
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+  padding: 10px;
+  display: inline-block;
+  /* margin-bottom: 10px; */
+  margin-top: 25px;
+  font-family: cursive;
+}
+
+
+.image-data span.text::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: white;
+  left: 0;
+  top: 0px;
+}
+.image-data span.text::before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 100%;
+  background: white;
+  left: 0;
+  bottom: 0;
+}
+.image-data h1 {
+  font-size: 70px;
+  font-weight: 600;
+  color: #fff;
+}
+/* swiper right and left button */
+.nav-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.3);
+}
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+/* swiper Right button */
+.swiper-button-next {
+  right: 10px;
+  opacity: 0;
+  transition: 0.3s;
+  border: 2px solid #fff;
+}
+.main.swiper:hover .swiper-button-next{
+  opacity: 1;
+  right: 50px;
+}
+/* swiper left button */
+.swiper-button-prev {
+  left: 10px;
+  opacity: 0;
+  transition: 0.3s;
+  border: 2px solid #fff;
+}
+
+.main.swiper:hover .swiper-button-prev{
+  opacity: 1;
+  left: 50px;
+}
+
+.nav-btn::before,
+.nav-btn::after {
+  font-size: 25px;
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  opacity: 1;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  visibility: hidden;
+}
+.swiper-pagination-bullet-active {
+  border: 2px solid #fff;
+  background-color: #c87e4f;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    visibility: hidden;
+  }
+  .swiper-pagination-bullet {
+    visibility: visible;
+  }
+}
